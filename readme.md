@@ -7,7 +7,7 @@ As it stands at the moment, it's just a very simple maze nagivation thingie magi
 <br />
 
 excuse the terrible handwriting... My mouse is horrible.
-Also, in case you get confused:
+Also, in case you get confused: <br />
 <b> You move in increments of halves. So if you where to type 'e' from the start, you would
 	move to mid bottom </b>
 <h2>LICENCE</h2>
