@@ -1,5 +1,18 @@
-#Maze game.
-
+################################
+# top         top          top #
+# west     mid (door)      east#
+#   ##########    ##########   #
+#   #        #    #        #   #
+#   #        #    #        #   #
+# m ##########    ##########   #
+# west       middle      mid ea#
+#   ##########    ##########   #
+#   #        #    #        #   #
+#   #        #    #        #   #
+#   ##########    ##########   #
+#           bottom       bottom#
+# start       mid         east #
+################################
 
 print "You wake up in a maze\n"
 print "There's no light... It seems you're going blind!\n"
@@ -9,6 +22,64 @@ print "North - n"
 print "South - s"
 print "West - w"
 print "East - e\n"
+
+def start():
+	print "You're at the bottom left hand corner of the maze\n"
+	print "You can only go north and east\n"
+	
+	while True:
+		direction = raw_input("> ")
+		if direction == 'n':
+			mid_west()
+			break
+		elif direction == 'e':
+			bottom_middle()
+			break
+
+def mid_west():
+	print "You are north of were you started...\n"
+	print "You can go south (back to beginning), east or north.\n"
+
+	while True:
+		direction = raw_input("> ")
+		if direction == 'n':
+			top_west()
+			break
+		elif direction == 'e':
+			middle()
+			break
+		elif direction == 's':
+			start()
+			break
+
+def top_west():
+	print "You are further north from where you started! (Top left hand corner)\n"
+	print "You can go east and south.\n"
+
+	while True:
+		direction = raw_input("> ")
+		if direction == 'e':
+			top_middle()
+			break
+		elif direction == 's':
+			mid_west()
+			break
+
+def bottom_middle():
+	print "You are east of where you started.\n"
+	print "You can go north, west and east.\n"
+
+	while True:
+		direction = raw_input("> ")
+		if direction == 'n':
+			middle()
+			break
+		elif direction == 'w':
+			start()
+			break
+		elif direction == 'e':
+			bottom_east()
+			break
 
 def middle():
 	print "You are dead center of the map...\n"
@@ -57,67 +128,6 @@ def middle():
 			print "Better luck next time!"
 			break
 
-
-
-def start():
-	print "You're at the bottom left hand corner of the maze\n"
-	print "You can only go north and east\n"
-	
-	while True:
-		direction = raw_input("> ")
-		if direction == 'n':
-			mid_west()
-			break
-		elif direction == 'e':
-			bottom_middle()
-			break
-
-
-def mid_west():
-	print "You are north of were you started...\n"
-	print "You can go south (back to beginning), east or north.\n"
-
-	while True:
-		direction = raw_input("> ")
-		if direction == 'n':
-			top_west()
-			break
-		elif direction == 'e':
-			middle()
-			break
-		elif direction == 's':
-			start()
-			break
-
-def top_west():
-	print "You are further north from where you started! (Top left hand corner)\n"
-	print "You can go east and south.\n"
-
-	while True:
-		direction = raw_input("> ")
-		if direction == 'e':
-			top_middle()
-			break
-		elif direction == 's':
-			mid_west()
-			break
-
-def mid_east():
-	print "You are at the middle of the east wall!\n"
-	print "You can go north, south and west!\n"
-
-	while True:
-		direction = raw_input("> ")
-		if direction == 'n':
-			top_east()
-			break
-		elif direction == 's':
-			bottom_east()
-			break
-		elif direction == 'w':
-			middle()
-			break
-
 def top_middle():
 	print "You are at the top middle!\n"
 	print "You can go east, south and west\n"
@@ -141,37 +151,6 @@ def top_middle():
 			door()
 			break
 
-def top_east():
-	print "You are at the top east!\n"
-	print "You can go west and south!\n"
-
-	while True:
-		direction = raw_input("> ")
-		if direction == 'w':
-			top_middle()
-			break
-		elif direction == 's':
-			mid_east()
-			break
-
-
-
-def bottom_middle():
-	print "You are east of where you started.\n"
-	print "You can go north, west and east.\n"
-
-	while True:
-		direction = raw_input("> ")
-		if direction == 'n':
-			middle()
-			break
-		elif direction == 'w':
-			start()
-			break
-		elif direction == 'e':
-			bottom_east()
-			break
-
 def bottom_east():
 	print "You are at the bottom east corner of the map!\n"
 	print "You can go west and north!\n"
@@ -182,6 +161,35 @@ def bottom_east():
 			bottom_middle()
 			break
 		elif direction == 'n':
+			mid_east()
+			break
+
+def mid_east():
+	print "You are at the middle of the east wall!\n"
+	print "You can go north, south and west!\n"
+
+	while True:
+		direction = raw_input("> ")
+		if direction == 'n':
+			top_east()
+			break
+		elif direction == 's':
+			bottom_east()
+			break
+		elif direction == 'w':
+			middle()
+			break
+
+def top_east():
+	print "You are at the top east!\n"
+	print "You can go west and south!\n"
+
+	while True:
+		direction = raw_input("> ")
+		if direction == 'w':
+			top_middle()
+			break
+		elif direction == 's':
 			mid_east()
 			break
 
@@ -207,6 +215,4 @@ def door():
 			print "GAME COMPLETED!"
 			break
 
-
 start()
-
