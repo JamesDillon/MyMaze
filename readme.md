@@ -1,12 +1,14 @@
 <h1>MyMaze</h1>
 This is the first text based adventure, created to help me understand various aspects of text adventures.
-Created around january 2011.
+Created around january 2011. 
+
+Disclaimer:
+This is an old project and is not indicative of my current practices, conventions and problems solving skills.
 <br />
 <img border="0" src="map.png" alt="Maze">
 
 <br />
 
-excuse the terrible handwriting... My mouse is horrible.
 Also, in case you get confused: <br />
 <b> You move in increments of halves. So if you where to type 'e' from the start, you would
 	move to mid bottom </b>
